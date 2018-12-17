@@ -7,10 +7,10 @@
   body {
     width: 100vw;
     height: 100vh;
-    background-color: #e6e2e2;
+    background-color: #fffdfd;
   }
 
   .align-center {
     margin: 15px;
-    border:1px dashed #CCC;
+    border:1px dashed rgb(253, 253, 253);
   }

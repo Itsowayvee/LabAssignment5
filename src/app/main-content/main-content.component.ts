@@ -47,13 +47,17 @@ export class MainContentComponent implements OnInit {
   }
 
   addStudent() {
-    const student:IStudent = {
+    const student: IStudent = {
       id: 4,
       firstName: 'Mike',
       lastName: 'Tyson',
       course: 'Boxing'
     }
+    
     this.students.push(student);
   }
 
+  deleteStudent() {
+    this.students.delete(student);
+  }
 }
