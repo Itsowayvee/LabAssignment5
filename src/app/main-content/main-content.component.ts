@@ -16,6 +16,8 @@ export class MainContentComponent implements OnInit {
 
   students: Array<IStudent> = [];
 
+  editMode: boolean = false;
+
   constructor() {
     this.students[0] = {
       id: 1,
@@ -47,17 +49,24 @@ export class MainContentComponent implements OnInit {
   }
 
   addStudent() {
+    this.editMode = true;
     const student: IStudent = {
-      id: 4,
-      firstName: 'Mike',
-      lastName: 'Tyson',
-      course: 'Boxing'
-    }
-    
-    this.students.push(student);
+      id: null,
+      firstName: null,
+      lastName: null,
+      course: null
+    };
+
+    // this.students.push(student);
+    this.students.unshift(student);
   }
 
-  deleteStudent() {
-    this.students.delete(student);
+  removeStudent(index: number) {
+    console.log('from removeStudent function index: ', index);
+    this.students.splice(index, 1);
+  }
+
+  saveStudent() {
+    this.editMode = false;
   }
 }
